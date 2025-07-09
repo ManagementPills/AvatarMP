@@ -1,0 +1,14 @@
+
+[Unit]
+Description=Avatar-MP Assistant Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/Avatar-MP
+ExecStart=/home/ubuntu/Avatar-MP/venv/bin/python app.py
+EnvironmentFile=/home/ubuntu/Avatar-MP/.env
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
